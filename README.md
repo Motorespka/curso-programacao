@@ -1,12 +1,20 @@
 # RENOW Lab — Curso de Programação
 
-Curso interativo estático no navegador: **520+ micro-aulas**, caderninho, e **Área de teste** com preview ao vivo (HTML/CSS/JS).
+Curso interativo: **520+ micro-aulas**, caderninho pesquisável e **Área de teste** (HTML/CSS/JS com preview ao vivo).
 
-## Abrir no celular / outro PC (produção)
+## Use em qualquer lugar (recomendado)
 
-Depois do deploy, use a URL da Vercel (ex.: `https://curso-programacao.vercel.app` ou a URL que o deploy devolver).
+### GitHub Pages (site completo, estável)
 
-Progresso fica no `localStorage` **daquele navegador** — em outro PC o save começa limpo (normal).
+**https://motorespka.github.io/curso-programacao/**
+
+### Vercel (shell + CDN do GitHub)
+
+**https://renow-code-lab-k45430494-9498s-projects.vercel.app**
+
+> O nome `curso-programacao.vercel.app` pode ser configurado no painel da Vercel: Project → Settings → Domains → Add `curso-programacao.vercel.app` (se disponível na sua conta).
+
+Código-fonte: https://github.com/Motorespka/curso-programacao
 
 ## Abrir no PC (local)
 
@@ -17,23 +25,20 @@ python -m http.server 8765
 
 Abra http://localhost:8765
 
-## O que tem
+## Recursos
 
-| Recurso | Descrição |
+| Recurso | O que faz |
 |---------|-----------|
-| 10 trilhas | Fundamentos, Sites, Java, Go, Algoritmos, Systems, Backend, Dados, TS/C/Rust, Carreira |
-| 520+ aulas | Ensina → lab → prova |
-| Caderninho | Busca `print`, `SELECT`, etc. |
-| Área de teste | Código à esquerda, site ao vivo à direita (logo, hero…) |
+| **Área de teste** | Código à esquerda, site ao vivo à direita (logo, hero…) |
+| **520+ aulas** | 10 trilhas · ensina → lab → prova |
+| **Caderninho** | Busca `print`, `SELECT`, `Go`, etc. |
 
 ## Honestidade
 
-- O lab ensina **muito** sem pagar 10 cursos.
-- Nível “Google” ainda exige **anos** de prática, projetos difíceis e entrevistas.
-- Labs Java/Go/C/Rust validam sintaxe no browser; rode de verdade no PC (JDK/Go/gcc/cargo).
+- Este lab ensina **muito** sem pagar vários cursos.
+- Nível “Google” ainda pede **anos** de prática + projetos difíceis.
+- Java/Go/C/Rust: validamos sintaxe no browser; rode de verdade no PC depois.
 
-## Regenerar aulas
+## Nota sobre progresso
 
-```powershell
-node tools/generate-mega.js
-```
+O progresso fica no `localStorage` **daquele navegador**. Em outro PC o save começa do zero (normal).

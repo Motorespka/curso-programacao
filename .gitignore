@@ -1,0 +1,7 @@
+.vercel
+_deploy-payload.json
+_deploy_parts/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log

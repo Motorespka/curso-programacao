@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RENOW Lab — Aprenda programação de verdade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- BOOT -->
+    <section id="screen-boot" class="screen active">
+      <div class="boot-hero">
+        <div class="boot-copy">
+          <p class="eyebrow">Curso gratuito · ADS + Sites + Dados + Elite path</p>
+          <h1>Aprenda programando.<br /><em>Não decorando.</em></h1>
+          <p class="lead">
+            <strong>520+ micro-aulas</strong> em várias linguagens (Python, JS/TS, Java, Go, C, Rust, SQL…),
+            systems e entrevistas. Cada aula ensina 1 ideia ou 1–2 linhas de código — depois lab e prova.
+            Caderninho pesquisável. Nada te impede de estudar tudo aqui; virar nível Google ainda exige anos de prática fora do site.
+          </p>
+          <ul class="boot-bullets">
+            <li>10 trilhas: Fundamentos, Sites, Java, Go, Algoritmos, Systems, Backend, Dados, TS/C/Rust, Carreira</li>
+            <li>Labs no navegador + sintaxe Java/Go/C/Rust validada</li>
+            <li>Sem pagar um curso separado por linguagem</li>
+          </ul>
+          <label class="field">
+            <span>Como quer ser chamado?</span>
+            <input id="player-name" type="text" maxlength="24" placeholder="Seu nome" autocomplete="off" />
+          </label>
+          <div class="boot-actions">
+            <button id="btn-start" class="btn primary" type="button">Começar a aprender</button>
+            <button id="btn-continue" class="btn ghost hidden" type="button">Continuar de onde parei</button>
+          </div>
+          <p class="hint">Progresso salva neste navegador. Sem pagamento. Sem IA no meio do caminho.</p>
+        </div>
+        <aside class="boot-card" aria-hidden="true">
+          <div class="mini-terminal">
+            <div class="term-bar"><span></span><span></span><span></span></div>
+            <pre id="boot-demo">> print("oi, futuro dev")
+oi, futuro dev
+
+> Você digita. O lab responde.</pre>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- HUB / MAP -->
+    <section id="screen-map" class="screen">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Seu laboratório</p>
+          <h2 id="greet">Olá</h2>
+        </div>
+        <div class="stats">
+          <div class="stat energy"><span class="label">Foco</span><strong id="stat-streak">0</strong></div>
+          <div class="stat"><span class="label">Nível</span><strong id="stat-level">1</strong></div>
+          <div class="stat"><span class="label">XP</span><strong id="stat-xp">0</strong></div>
+          <div class="stat"><span class="label">Aulas</span><strong id="stat-missions">0/0</strong></div>
+        </div>
+      </header>
+
+      <nav id="track-tabs" class="track-tabs" aria-label="Cursos"></nav>
+      <div id="track-banner" class="track-banner"></div>
+      <div class="xp-track" aria-hidden="true"><div id="xp-fill" class="xp-fill"></div></div>
+
+      <div class="focus-bar">
+        <p id="map-intro" class="map-intro">Escolha uma aula. Cada uma: ensina → você pratica → prova rápida.</p>
+        <label class="focus-toggle">
+          <input type="checkbox" id="focus-mode" />
+          <span>Modo foco (esconde extras)</span>
+        </label>
+      </div>
+
+      <div id="mission-grid" class="mission-grid"></div>
+
+      <footer class="footer-bar">
+        <div class="footer-left">
+          <button id="btn-sandbox" class="btn run" type="button">Área de teste</button>
+          <button id="btn-notebook" class="btn primary" type="button">Caderninho</button>
+          <button id="btn-badges" class="btn ghost" type="button">Conquistas</button>
+        </div>
+        <button id="btn-reset" class="btn danger-ghost" type="button">Zerar trilha</button>
+      </footer>
+    </section>
+
+    <!-- SANDBOX / ÁREA DE TESTE -->
+    <section id="screen-sandbox" class="screen">
+      <header class="topbar compact">
+        <button id="btn-back-from-sandbox" class="btn ghost" type="button">← Hub</button>
+        <div class="mission-meta">
+          <p class="eyebrow">Construa e veja na hora</p>
+          <h2>Área de teste</h2>
+        </div>
+        <button id="btn-sandbox-refresh" class="btn run" type="button">Atualizar preview</button>
+      </header>
+
+      <p class="map-intro">
+        Escreva HTML / CSS / JS à esquerda e veja o site à direita.
+        Coloque um logo com <code>&lt;img src="..."&gt;</code> e ele aparece no preview.
+      </p>
+
+      <div class="sandbox-templates" role="group" aria-label="Modelos prontos">
+        <span class="how-label" style="margin:0">Modelos:</span>
+        <button type="button" class="btn ghost sandbox-tpl" data-tpl="blank">Página em branco</button>
+        <button type="button" class="btn ghost sandbox-tpl" data-tpl="hero">Landing hero</button>
+        <button type="button" class="btn ghost sandbox-tpl" data-tpl="logo">Header + logo</button>
+      </div>
+
+      <div class="sandbox-layout">
+        <div class="sandbox-editors">
+          <div class="sandbox-pane">
+            <div class="sandbox-pane-label">Seu código — HTML</div>
+            <textarea id="sb-html" class="lab-editor sandbox-ta" spellcheck="false" aria-label="HTML"></textarea>
+          </div>
+          <div class="sandbox-pane">
+            <div class="sandbox-pane-label">Seu código — CSS</div>
+            <textarea id="sb-css" class="lab-editor sandbox-ta" spellcheck="false" aria-label="CSS"></textarea>
+          </div>
+          <div class="sandbox-pane">
+            <div class="sandbox-pane-label">Seu código — JavaScript (opcional)</div>
+            <textarea id="sb-js" class="lab-editor sandbox-ta" spellcheck="false" aria-label="JavaScript"></textarea>
+          </div>
+          <p class="hint sandbox-tip">
+            Logo de exemplo (cole no src):
+            <code id="sb-logo-url">https://placehold.co/140x48/3dd6c6/062a28?text=RENOW</code>
+            <button type="button" class="btn ghost" id="btn-copy-logo" style="padding:.35rem .6rem;font-size:.8rem">Copiar URL</button>
+          </p>
+        </div>
+        <div class="sandbox-preview-col">
+          <div class="sandbox-pane-label accent">Como fica o site (preview ao vivo)</div>
+          <div class="lab-preview sandbox-preview">
+            <iframe id="sb-iframe" title="Preview ao vivo do site"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CADERNO -->
+    <section id="screen-notebook" class="screen">
+      <header class="topbar compact">
+        <button id="btn-back-from-notes" class="btn ghost" type="button">← Hub</button>
+        <div class="mission-meta">
+          <p class="eyebrow">Seu material de consulta</p>
+          <h2>Caderninho</h2>
+        </div>
+        <div class="stat mini"><span class="label">Notas</span><strong id="notes-count">0</strong></div>
+      </header>
+      <p class="map-intro">Tudo que você já concluiu aparece aqui. Pesquise um comando (ex: <strong>print</strong>) e veja como usar.</p>
+      <label class="field notes-search">
+        <span>Pesquisar no caderno</span>
+        <input id="notes-query" type="search" placeholder="print, SELECT, Supabase, CSS…" autocomplete="off" />
+      </label>
+      <div id="notes-empty" class="notes-empty hidden">Nenhuma nota ainda. Conclua uma aula — o caderno anota sozinho.</div>
+      <div id="notes-list" class="notes-list"></div>
+    </section>
+
+    <!-- LESSON -->
+    <section id="screen-mission" class="screen">
+      <header class="topbar compact">
+        <button id="btn-back-map" class="btn ghost" type="button">← Hub</button>
+        <div class="mission-meta">
+          <p class="eyebrow" id="mission-chapter">Aula 1</p>
+          <h2 id="mission-title">Título</h2>
+        </div>
+        <div class="stat mini"><span class="label">XP</span><strong id="mission-xp">+0</strong></div>
+      </header>
+
+      <div class="lesson-progress" id="lesson-progress"></div>
+      <nav id="step-tabs" class="step-tabs" hidden></nav>
+      <article id="lesson-body" class="lesson-body"></article>
+
+      <footer class="footer-bar sticky">
+        <button id="btn-prev-step" class="btn ghost" type="button">Voltar</button>
+        <span id="step-indicator">1 / 1</span>
+        <button id="btn-next-step" class="btn primary" type="button">Continuar</button>
+      </footer>
+    </section>
+
+    <div id="modal-badges" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <header>
+          <h3>Conquistas</h3>
+          <button id="btn-close-badges" class="btn ghost" type="button">Fechar</button>
+        </header>
+        <div id="badges-list" class="badges-list"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden" role="status"></div>
+    <div id="confetti" class="confetti hidden" aria-hidden="true"></div>
+  </div>
+
+  <!-- Python no navegador -->
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"></script>
+  <script src="js/playgrounds.js"></script>
+  <script src="js/notebook.js"></script>
+  <script src="js/curriculum.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

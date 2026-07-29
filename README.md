@@ -4,20 +4,22 @@
 
 ## Abrir agora (qualquer PC / celular)
 
-### URL principal (pronta)
+### URL ao vivo (use esta)
 
-# https://motorespka.github.io/curso-programacao/
+**https://motorespka.github.io/curso-programacao/**
+
+Funciona em qualquer notebook/celular. Tem **Área de teste**, 520+ aulas e Caderninho.
 
 Repo: https://github.com/Motorespka/curso-programacao
 
-### Quer domínio `*.vercel.app`?
+### Quer `curso-programacao.vercel.app`?
 
-1. Entre em [vercel.com/new](https://vercel.com/new)
-2. **Import** o repo `Motorespka/curso-programacao`
-3. Deploy (site estático, sem build)
-4. Em **Settings → Domains**, se quiser, adicione `curso-programacao` como nome do projeto
+1. Abra [vercel.com/new](https://vercel.com/new) com **sua** conta Vercel  
+2. **Import** → `Motorespka/curso-programacao`  
+3. Framework: **Other** / sem build · Output: raiz  
+4. Deploy → depois em **Settings → General** renomeie o projeto para `curso-programacao` se quiser o subdomain
 
-> Deploy automático via API da equipe Cursor ficou bloqueado por permissão (403) no projeto antigo; o import pelo dashboard funciona em 1 minuto.
+> Deploy pela API do Cursor cai em tela de login da Vercel (permissão de equipe). O import na **sua** conta resolve.
 
 ## No seu PC
 

@@ -1,6 +1,10 @@
-.vercel
+deploy-vercel/
+_deploy-thin.json
+_deploy-thin.b64
+_deploy-thin-oneline.json
 _deploy-payload.json
 _deploy_parts/
+.vercel
 node_modules/
 .DS_Store
 Thumbs.db

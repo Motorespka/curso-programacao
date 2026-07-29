@@ -1,44 +1,44 @@
 # RENOW Lab — Curso de Programação
 
-Curso interativo: **520+ micro-aulas**, caderninho pesquisável e **Área de teste** (HTML/CSS/JS com preview ao vivo).
+**520+ micro-aulas** · Caderninho · **Área de teste** (HTML/CSS/JS com preview ao vivo)
 
-## Use em qualquer lugar (recomendado)
+## Abrir agora (qualquer PC / celular)
 
-### GitHub Pages (site completo, estável)
+### URL principal (pronta)
 
-**https://motorespka.github.io/curso-programacao/**
+# https://motorespka.github.io/curso-programacao/
 
-### Vercel (shell + CDN do GitHub)
+Repo: https://github.com/Motorespka/curso-programacao
 
-**https://renow-code-lab-k45430494-9498s-projects.vercel.app**
+### Quer domínio `*.vercel.app`?
 
-> O nome `curso-programacao.vercel.app` pode ser configurado no painel da Vercel: Project → Settings → Domains → Add `curso-programacao.vercel.app` (se disponível na sua conta).
+1. Entre em [vercel.com/new](https://vercel.com/new)
+2. **Import** o repo `Motorespka/curso-programacao`
+3. Deploy (site estático, sem build)
+4. Em **Settings → Domains**, se quiser, adicione `curso-programacao` como nome do projeto
 
-Código-fonte: https://github.com/Motorespka/curso-programacao
+> Deploy automático via API da equipe Cursor ficou bloqueado por permissão (403) no projeto antigo; o import pelo dashboard funciona em 1 minuto.
 
-## Abrir no PC (local)
+## No seu PC
 
 ```powershell
 cd "c:\Users\micke\Desktop\O rebobinador\curso-motores-renow"
 python -m http.server 8765
 ```
 
-Abra http://localhost:8765
+http://localhost:8765
 
-## Recursos
+## Como estudar
 
-| Recurso | O que faz |
-|---------|-----------|
-| **Área de teste** | Código à esquerda, site ao vivo à direita (logo, hero…) |
-| **520+ aulas** | 10 trilhas · ensina → lab → prova |
-| **Caderninho** | Busca `print`, `SELECT`, `Go`, etc. |
+1. Hub → escolha a trilha  
+2. Botão **Área de teste** → código à esquerda, site à direita (logo, hero…)  
+3. Aulas: ensina → lab → prova  
+4. **Caderninho** → pesquise `print`, `SELECT`, `Go`…
 
 ## Honestidade
 
-- Este lab ensina **muito** sem pagar vários cursos.
-- Nível “Google” ainda pede **anos** de prática + projetos difíceis.
-- Java/Go/C/Rust: validamos sintaxe no browser; rode de verdade no PC depois.
+- Dá para aprender **muito** aqui sem pagar vários cursos.  
+- Nível “Google” ainda precisa de **anos** de prática e projetos difíceis.  
+- Java/Go/C/Rust: sintaxe no browser; execute de verdade no PC depois.
 
-## Nota sobre progresso
-
-O progresso fica no `localStorage` **daquele navegador**. Em outro PC o save começa do zero (normal).
+Progresso = `localStorage` daquele navegador (outro PC = save zerado).
